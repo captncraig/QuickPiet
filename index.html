@@ -1,1 +1,49 @@
-Test project GitHub page
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+"http://www.w3.org/TR/html4/strict.dtd">
+<html lang="en">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>
+			QuickPietJS Test Page
+		</title>
+		<script src="lib/quickpiet.js" type="text/javascript" charset="utf-8"></script>
+		<script src="lib/commands.js" type="text/javascript" charset="utf-8"></script>
+		<script src="spec/support/jquery.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<div style="float:left;">
+			Commands:
+			<br />
+			<textarea id="commands" cols="40" rows="40" >
+# default dummy commands
+:top
+
+push 105
+push 72
+
+out
+out
+
+# comment
+		</textarea>
+		</div>
+		<div style="float:left;">
+			Input:
+			<br />
+			<textarea id="input" cols="40" rows="40" ></textarea>
+		</div>
+		<div style="float:left;">
+			Output:
+			<br />
+			<textarea id="output" cols="40" rows="40" ></textarea>
+		</div>
+		<div style="float:left;">
+			Stack:
+			<br />
+			<textarea id="stack" cols="10" rows="40" ></textarea>
+		</div>
+		<div style="float:left;">
+			<input type="button" value="Run" id="run" onclick="console.log('STARTING!');$('#output').val('');QuickPietJS.Run($('#commands'),$('#input'),$('#output'))"/>
+		</div>
+	</body>
+</html>
