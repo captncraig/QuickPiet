@@ -13,7 +13,14 @@
 push X Y Z ...     --> Pushes 1 or more space separated positive integer values onto the stack (X first, then Y, then Z and so on).
                    --> Positive integer values may represent ASCII character codes or plain integers
                    --> Do not include commas (,) in large values
-
+                   
+push "some string" R  --> Pushes a string literal onto the stack, one character at a time. 
+                      --> Uses the ascii value of each character in the string.
+                      --> valid escape sequences are \r \n \t \\ and \"
+                      --> Pushes characters on from left to right
+                      --> If R is appended, will push right to left so you don't need to reverse
+                      --> a string you intend to print
+                      
 pop X              --> Pops the top X value(s) of the stack and discards.  If X is omitted, 1 is assumed.
 
 duplicate          --> Pushes a copy of the top value of the stack onto the stack
@@ -28,7 +35,8 @@ roll               --> Pops the top two values, and "rolls" the remaining stack 
 
 input              --> Read a single value from STDIN and push it onto the stack; characters are read as their ASCII value
 
-output             --> Pop the top value from the stack and output it to STDOUT in it's ASCII character value
+output X           --> Pop the top X values from the stack and output it to STDOUT in it's ASCII character value
+                   --> if X omitted, assumes 1
 
 add                --> Pops the top two values, adds them, and pushes the result
 
